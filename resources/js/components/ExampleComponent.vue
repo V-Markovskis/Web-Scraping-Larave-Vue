@@ -62,8 +62,8 @@ async function scrapeData() {
 
 <template>
     <div>
-        <h1>Simple table</h1>
-        <h2>DataTables + Vue3 example</h2>
+        <h1>Hacker News Web Scraper</h1>
+        <h2>Press "Scrape data" to fill the table</h2>
         <p>
             This example demonstrates the <code>datatables.net-vue3</code> package
             being used to display an interactive DataTable in a Vue application.
@@ -73,7 +73,7 @@ async function scrapeData() {
         <button @click="scrapeData" :disabled="data.length > 0">Scrape data</button>
 
         <DataTable
-            class="display"
+            class="table table-striped table-bordered display"
             :columns="columns"
             :data="data"
             :options="{ select: true }"
