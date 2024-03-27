@@ -34,7 +34,6 @@ const columns = [
 // Get a DataTables API reference
 onMounted(async () => {
     dt = table.value.dt;
-    await fetchData();
 });
 
 async function fetchData() {
@@ -55,6 +54,10 @@ function remove() {
         data.value.splice(idx, 1);
     });
 }
+
+async function scrapeData() {
+    await fetchData();
+}
 </script>
 
 <template>
@@ -67,6 +70,7 @@ function remove() {
         </p>
 
         <button @click="remove">Delete selected rows</button>
+        <button @click="scrapeData" :disabled="data.length > 0">Scrape data</button>
 
         <DataTable
             class="display"
