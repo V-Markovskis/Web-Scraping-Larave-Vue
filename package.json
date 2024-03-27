@@ -10,9 +10,15 @@
         "@vitejs/plugin-vue": "^4.6.2",
         "axios": "^1.6.4",
         "bootstrap": "^5.2.3",
+        "datatables.net": "^2.0.3",
         "laravel-vite-plugin": "^1.0.0",
         "sass": "^1.56.1",
         "vite": "^5.0.0",
         "vue": "^3.4.21"
+    },
+    "dependencies": {
+        "datatables.net-responsive": "^3.0.1",
+        "datatables.net-select": "^2.0.0",
+        "datatables.net-vue3": "^3.0.1"
     }
 }
