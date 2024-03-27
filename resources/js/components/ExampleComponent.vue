@@ -24,6 +24,10 @@ const columns = [
         data: 'points',
         title: 'Points',
     },
+    {
+        data: 'date_created',
+        title: 'Date_created',
+    }
 ];
 
 
