@@ -4,7 +4,7 @@ import { ref, onMounted } from 'vue';
 import DataTable from 'datatables.net-vue3';
 import DataTablesLib from 'datatables.net';
 import 'datatables.net-select';
-import axios from "axios";
+import { fetchData } from "../../callsToDB/getAllData.js";
 
 DataTable.use(DataTablesLib);
 
@@ -36,16 +36,6 @@ onMounted(async () => {
     dt = table.value.dt;
 });
 
-async function fetchData() {
-    try {
-        const response = await axios.get('/api/scrape-and-save');
-        data.value = response.data.data;
-        console.log('Data fetched:', data.value);
-    } catch (error) {
-        console.error('Failed to fetch data: ', error);
-    }
-}
-
 
 // For each selected row find the data object in `data` array and remove it
 function remove() {
@@ -56,7 +46,7 @@ function remove() {
 }
 
 async function scrapeData() {
-    await fetchData();
+    data.value = await fetchData();
 }
 </script>
 
@@ -69,7 +59,7 @@ async function scrapeData() {
             being used to display an interactive DataTable in a Vue application.
         </p>
 
-        <div class="d-flex gap-2">
+        <div class="d-flex gap-2 pb-5">
             <button @click="remove" class="btn btn-danger">Delete selected rows</button>
             <button @click="scrapeData"
                     :class="[{'btn-secondary': data.length > 0}, 'btn', 'btn-primary']"
@@ -89,4 +79,5 @@ async function scrapeData() {
 
 <style>
  @import '../../../../node_modules/datatables.net-dt';
+ @import './FetchScrapedData.css';
 </style>
