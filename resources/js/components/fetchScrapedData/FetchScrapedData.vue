@@ -26,7 +26,7 @@ const columns = [
     },
     {
         data: 'date_created',
-        title: 'Date_created',
+        title: 'Date created',
     }
 ];
 
@@ -61,7 +61,7 @@ async function scrapeData() {
 </script>
 
 <template>
-    <div>
+    <div class="p-5 pt-0">
         <h1>Hacker News Web Scraper</h1>
         <h2>Press "Scrape data" to fill the table</h2>
         <p>
@@ -69,11 +69,16 @@ async function scrapeData() {
             being used to display an interactive DataTable in a Vue application.
         </p>
 
-        <button @click="remove">Delete selected rows</button>
-        <button @click="scrapeData" :disabled="data.length > 0">Scrape data</button>
+        <div class="d-flex gap-2">
+            <button @click="remove" class="btn btn-danger">Delete selected rows</button>
+            <button @click="scrapeData"
+                    :class="[{'btn-secondary': data.length > 0}, 'btn', 'btn-primary']"
+                    :disabled="data.length > 0">Scrape data</button>
+
+        </div>
 
         <DataTable
-            class="table table-striped table-bordered display"
+            class="table table-striped table-bordered display hover"
             :columns="columns"
             :data="data"
             :options="{ select: true }"
@@ -83,5 +88,5 @@ async function scrapeData() {
 </template>
 
 <style>
-
+ @import '../../../../node_modules/datatables.net-dt';
 </style>

@@ -17,10 +17,8 @@ import { createApp } from 'vue';
 
 const app = createApp({});
 
-import ExampleComponent from './components/ExampleComponent.vue';
-import FetchScrapedData from "./components/FetchScrapedData.vue";
-app.component('example-component', ExampleComponent);
-app.component('FetchScrapedData', FetchScrapedData);
+import FetchScrapedData from "./components/fetchScrapedData/FetchScrapedData.vue";
+app.component('fetch-scraped-data', FetchScrapedData);
 
 /**
  * The following block of code may be used to automatically register your
