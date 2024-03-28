@@ -4,7 +4,9 @@ import { ref, onMounted } from 'vue';
 import DataTable from 'datatables.net-vue3';
 import DataTablesLib from 'datatables.net';
 import 'datatables.net-select';
-import { fetchData } from "../../callsToDB/getAllData.js";
+import { getAllData } from "../../callsToDB/getAllData.js";
+import { deleteAllData } from "../../callsToDB/deleteAllData.js";
+
 
 DataTable.use(DataTablesLib);
 
@@ -34,6 +36,7 @@ const columns = [
 // Get a DataTables API reference
 onMounted(async () => {
     dt = table.value.dt;
+    await deleteAllData();
 });
 
 
@@ -46,7 +49,7 @@ function remove() {
 }
 
 async function scrapeData() {
-    data.value = await fetchData();
+    data.value = await getAllData();
 }
 </script>
 

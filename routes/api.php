@@ -22,4 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/scrape-and-save', [ScrapeController::class, 'scrapeAndSave']);
 
-Route::delete('/articles/delete-all', [DeleteAllController::class, 'deleteAll']);
+Route::delete('/delete-all', [DeleteAllController::class, 'deleteAll']);
