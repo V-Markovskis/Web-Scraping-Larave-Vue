@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ScrapeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -15,15 +17,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-use App\Http\Controllers\MainController;
-
-//Route::get('/', [MainController::class, 'scrape']);
-
-Route::get('/', function () {
+Route::get('/scraper', function () {
     return view('welcome');
 });
 
 Route::get('/scrape-and-save', [ScrapeController::class, 'scrapeAndSave']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+//
+//Route::get('/register', [RegisterController::class, 'create']);
+//Route::post('/register', [RegisterController::class, 'store']);
+
+//Route::get('/logout', [RegisterController::class, 'logout'])->name('logout');
+//Route::post('/logout', [Logoutcontroller::class, 'destroy'])
+//    ->middleware('auth');
+
+
