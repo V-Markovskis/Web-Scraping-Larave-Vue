@@ -6,6 +6,7 @@ import DataTablesLib from 'datatables.net';
 import 'datatables.net-select';
 import { getAllData } from "../../callsToDB/getAllData.js";
 import { deleteAllData } from "../../callsToDB/deleteAllData.js";
+import { deleteSingleData } from "../../callsToDB/deleteSingleData.js";
 
 
 DataTable.use(DataTablesLib);
@@ -42,9 +43,11 @@ onMounted(async () => {
 
 // For each selected row find the data object in `data` array and remove it
 function remove() {
-    dt.rows({ selected: true }).every(function () {
+    dt.rows({ selected: true }).every(async function () {
+        let rowData = this.data();
         let idx = data.value.indexOf(this.data());
         data.value.splice(idx, 1);
+        await deleteSingleData(rowData.id);
     });
 }
 
@@ -67,7 +70,6 @@ async function scrapeData() {
             <button @click="scrapeData"
                     :class="[{'btn-secondary': data.length > 0}, 'btn', 'btn-primary']"
                     :disabled="data.length > 0">Scrape data</button>
-
         </div>
 
         <DataTable

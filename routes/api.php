@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DeleteAllController;
+use App\Http\Controllers\DeleteSingleArticleController;
 use App\Http\Controllers\ScrapeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -23,3 +24,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/scrape-and-save', [ScrapeController::class, 'scrapeAndSave']);
 
 Route::delete('/delete-all', [DeleteAllController::class, 'deleteAll']);
+
+Route::delete('/delete-single/{id}', [DeleteSingleArticleController::class, 'deleteSingle']);
+

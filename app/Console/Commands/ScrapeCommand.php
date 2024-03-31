@@ -43,10 +43,11 @@ class ScrapeCommand extends Command
         // Init Guzzle
         $client = new Client();
 
+        $max_pages = 3;
 
-        for ($i = 1; $i <= 1; $i++) {
+        for ($page = 1; $page <= $max_pages; $page++) {
             $response = $client->request('GET', $url, [
-                'query' => ['p' => $i]
+                'query' => ['p' => $page]
             ]);
 
             $response_status_code = $response->getStatusCode();
