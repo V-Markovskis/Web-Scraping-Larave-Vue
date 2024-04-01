@@ -8,6 +8,11 @@ import './bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { createApp } from 'vue';
+// import jQuery from 'jquery';
+// import Popper from '@popperjs/core';
+//
+// window.$ = window.jQuery = jQuery;
+// window.Popper = Popper;
 
 /**
  * Next, we will create a fresh Vue application instance. You may then begin

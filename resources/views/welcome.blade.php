@@ -10,12 +10,8 @@
 {{--    @vite(['resources/sass/app.scss', 'resources/js/app.js'])--}}
 </head>
     <body>
-        @extends('layouts.app')
-
-        @section('content')
-            <div id="app">
-                <fetch-scraped-data></fetch-scraped-data>
-            </div>
-        @endsection>
+        <div id="app">
+            <fetch-scraped-data></fetch-scraped-data>
+        </div>
     </body>
 </html>
