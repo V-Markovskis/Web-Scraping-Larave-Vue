@@ -16,6 +16,7 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 {{--    @vite('resources/js/app.js')--}}
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
     <div id="app">
@@ -50,10 +51,7 @@
                                 </li>
                             @endif
                         @else
-                            <form id="logout-form" action="{{ url('logout') }}" method="POST">
-                                {{ csrf_field() }}
-                                <button type="submit">Logout</button>
-                            </form>
+                            <a href="{{ route('logout') }}">Logout</a>
                         @endguest
                     </ul>
                 </div>

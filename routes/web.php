@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ScrapeController;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,5 +26,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Auth::routes();
 
+Route::get('logout', function ()
+{
+    auth()->logout();
+    Session()->flush();
 
+    return Redirect::to('/login');
+})->name('logout');
 
