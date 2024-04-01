@@ -34,3 +34,6 @@ Route::get('logout', function ()
     return Redirect::to('/login');
 })->name('logout');
 
+//Route::post('login', 'Auth\LoginController@loginNameOrEmail');
+
+

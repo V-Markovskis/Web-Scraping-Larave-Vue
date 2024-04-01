@@ -68,11 +68,4 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
-
-//    public function logout()
-//    {
-//        Auth::logout();
-//
-//        return redirect('/');
-//    }
 }

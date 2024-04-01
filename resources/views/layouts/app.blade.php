@@ -51,7 +51,7 @@
                                 </li>
                             @endif
                         @else
-                            <a href="{{ route('logout') }}">Logout</a>
+                            <a class="nav-link" href="{{ route('logout') }}">Logout</a>
                         @endguest
                     </ul>
                 </div>
