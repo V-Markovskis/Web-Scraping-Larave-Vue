@@ -57,7 +57,7 @@ async function scrapeData() {
 </script>
 
 <template>
-    <div class="p-5 pt-0">
+    <div class="container">
         <h1>Hacker News Web Scraper</h1>
         <h2>Press "Scrape data" to fill the table</h2>
         <p>
@@ -66,7 +66,7 @@ async function scrapeData() {
         </p>
 
         <div class="d-flex gap-2 pb-5">
-            <button @click="remove" class="btn btn-danger">Delete selected rows</button>
+            <button @click="remove" class="btn btn-danger">Delete selected row</button>
             <button @click="scrapeData"
                     :class="[{'btn-secondary': data.length > 0}, 'btn', 'btn-primary']"
                     :disabled="data.length > 0">Scrape data</button>

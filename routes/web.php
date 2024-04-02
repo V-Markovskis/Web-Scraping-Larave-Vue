@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/scraper', function () {
-//    return view('welcome');
-//});
+Route::get('/', function () {
+    return view('welcome');
+});
 
 //Route::get('/', function () {
 //    return view('home');
@@ -37,7 +37,4 @@ Route::get('logout', function ()
 
     return Redirect::to('/login');
 })->name('logout');
-
-//Route::post('login', 'Auth\LoginController@loginNameOrEmail');
-
 

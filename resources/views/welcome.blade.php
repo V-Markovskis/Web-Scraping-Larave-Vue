@@ -11,7 +11,7 @@
 </head>
     <body>
         <div id="app">
-            <fetch-scraped-data></fetch-scraped-data>
+            <a href="/home">Home/Register/Login</a>
         </div>
     </body>
 </html>
