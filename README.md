@@ -58,3 +58,8 @@ for ($page = 1; $page <= $max_pages; $page++) {
     ]);
 ```
 > Warning: Increasing the number of pages to scrape may result in errors such as 503 (Service Unavailable) and 403 (Forbidden) due to excessive requests to the server. This could lead to your IP address being blocked or other access issues with the website. It is recommended to use scraping cautiously and consider the site's data usage policy and limitations.
+
+
+## Additional Resources
+
+[How to Install PHP & MySQL with Laragon on Windows](https://www.youtube.com/watch?v=zIbKfg-tIGM)
