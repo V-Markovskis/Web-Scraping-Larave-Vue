@@ -6,7 +6,7 @@ utilizing phpMyAdmin. Only registered users will be able to view the scraper UI.
 
 ## Result
 
-[YouTube Link](https://youtu.be/-r6NVCmG5Ow) - Here you can check out the result of my project.
+[YouTube Link](https://youtu.be/-r6NVCmG5Ow) - Here you can check out the result of this project.
 
 ## Requirements
 
