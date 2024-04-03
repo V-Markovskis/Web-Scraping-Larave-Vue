@@ -35,7 +35,26 @@ utilizing phpMyAdmin. Access to the scraper interface will be restricted to regi
 7. **Start Laragon:**
    Launch Laragon. Open Laragon and click the "Start All" button to start the Apache server and MySQL database.
 
-8. **Access Your Project:**
+8. **Viewing the UI:**
+   To view the UI, you need to run the following command in your console: `npm run dev`
+
+9. **Access Your Project:**
    Once the server is running, you can access your project in the browser by entering the URL provided by Laragon.
 
+## Notes
 
+- While scraping can be initiated through the UI, for testing purposes, you can also trigger it from the command line using the following command:
+```bash
+php artisan app:scrape
+```
+- To begin scraping, the `ScraperCommand.php` file contains the following code snippet:
+
+```php
+$max_pages = 3; // You can adjust this value to scrape more pages
+
+for ($page = 1; $page <= $max_pages; $page++) {
+    $response = $client->request('GET', $url, [
+        'query' => ['p' => $page]
+    ]);
+```
+> Warning: Increasing the number of pages to scrape may result in errors such as 503 (Service Unavailable) and 403 (Forbidden) due to excessive requests to the server. This could lead to your IP address being blocked or other access issues with the website. It is recommended to use scraping cautiously and consider the site's data usage policy and limitations.
