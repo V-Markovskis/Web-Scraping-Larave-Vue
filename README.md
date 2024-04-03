@@ -2,7 +2,7 @@
 
 This project involves creating a scraper using Laravel and Vue.js to extract data from [*Hacker News*](https://news.ycombinator.com/).
 The scraper will retrieve information such as title, link, points, and date created for each article. The extracted data will be stored in a local MySQL database,
-utilizing phpMyAdmin. Access to the scraper interface will be restricted to registered users.
+utilizing phpMyAdmin. Only registered users will be able to view the scraper UI.
 
 ## Result
 

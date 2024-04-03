@@ -54,6 +54,5 @@ function paginationUrlCheck ()
         }
     }
 
-    dd($max_pages);
     return $max_pages;
 }
