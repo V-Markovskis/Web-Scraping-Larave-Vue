@@ -6,7 +6,10 @@ utilizing phpMyAdmin. Only registered users will be able to view the scraper UI.
 
 ## Result
 
-[YouTube Link](https://youtu.be/-r6NVCmG5Ow) - Here you can check out the result of this project.
+- Here you can check out the result of this project:
+
+<a href="https://youtu.be/-r6NVCmG5Ow"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Logo_of_YouTube_%282005-2006%29.svg/640px-Logo_of_YouTube_%282005-2006%29.svg.png" style="width:200px; height:100px;"></a>
+
 
 ## Requirements
 
